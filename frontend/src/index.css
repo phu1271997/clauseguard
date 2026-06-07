@@ -1,0 +1,250 @@
+:root {
+  /* HSL tailored premium color palette - Default Light Theme */
+  --hue: 265;
+  --primary: hsl(var(--hue), 70%, 55%);
+  --primary-hover: hsl(var(--hue), 75%, 48%);
+  --primary-light: hsl(var(--hue), 70%, 94%);
+  --secondary: hsl(190, 75%, 45%);
+  --secondary-hover: hsl(190, 80%, 40%);
+  --bg-app: hsl(240, 20%, 98%);
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  --border: hsl(240, 12%, 90%);
+  --border-focus: hsl(var(--hue), 70%, 65%);
+  --text-main: hsl(240, 10%, 20%);
+  --text-muted: hsl(240, 8%, 45%);
+  --text-title: hsl(240, 15%, 12%);
+  --success: hsl(142, 72%, 29%);
+  --success-bg: hsl(142, 70%, 94%);
+  --warning: hsl(38, 92%, 40%);
+  --warning-bg: hsl(38, 90%, 95%);
+  --error: hsl(350, 70%, 45%);
+  --error-bg: hsl(350, 70%, 95%);
+  
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 24px -4px rgba(109, 40, 217, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 20px 32px -6px rgba(109, 40, 217, 0.08), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', var(--font-sans);
+  --font-mono: 'Space Grotesk', monospace;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+/* Auto Sleek Dark Mode (Preferred for Web3 and Escrow dApps) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-app: hsl(240, 24%, 6%);
+    --bg-card: rgba(18, 18, 24, 0.65);
+    --bg-card-hover: rgba(24, 24, 32, 0.8);
+    --border: hsl(240, 16%, 15%);
+    --text-main: hsl(240, 10%, 82%);
+    --text-muted: hsl(240, 8%, 60%);
+    --text-title: hsl(240, 12%, 96%);
+    --primary-light: hsl(var(--hue), 60%, 15%);
+    
+    --success: hsl(142, 70%, 45%);
+    --success-bg: rgba(16, 185, 129, 0.1);
+    --warning: hsl(45, 93%, 47%);
+    --warning-bg: rgba(245, 158, 11, 0.1);
+    --error: hsl(350, 80%, 60%);
+    --error-bg: rgba(239, 68, 68, 0.1);
+    
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 16px 36px -4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(109, 40, 217, 0.05);
+    --shadow-lg: 0 24px 48px -6px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(109, 40, 217, 0.08);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Premium Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--hue), 85%, 65%), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.glass:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(109, 40, 217, 0.25);
+}
+
+/* Glowing Elements */
+.glow-primary {
+  box-shadow: 0 0 20px 0px rgba(109, 40, 217, 0.15);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px 0px rgba(6, 182, 212, 0.15);
+}
+
+/* Micro-Animations & Hover Effects */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-size: 200% auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.3);
+}
+
+.btn-premium:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-title);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--border);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-created {
+  color: hsl(200, 80%, 40%);
+  background: hsl(200, 70%, 94%);
+}
+@media (prefers-color-scheme: dark) {
+  .badge-created {
+    color: hsl(200, 90%, 75%);
+    background: rgba(14, 165, 233, 0.15);
+  }
+}
+
+.badge-funded {
+  color: hsl(270, 70%, 55%);
+  background: hsl(270, 70%, 95%);
+}
+@media (prefers-color-scheme: dark) {
+  .badge-funded {
+    color: hsl(270, 90%, 80%);
+    background: rgba(168, 85, 247, 0.15);
+  }
+}
+
+.badge-submitted {
+  color: hsl(35, 80%, 45%);
+  background: hsl(35, 70%, 94%);
+}
+@media (prefers-color-scheme: dark) {
+  .badge-submitted {
+    color: hsl(35, 90%, 75%);
+    background: rgba(245, 158, 11, 0.15);
+  }
+}
+
+.badge-resolved {
+  color: var(--success);
+  background: var(--success-bg);
+}
